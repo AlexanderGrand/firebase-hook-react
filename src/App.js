@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Store from "./component/firebase/Store";
 
+const navBar = {
+  backgroundColor: "orange",
+  padding: 15,
+  fontSize: "18px",
+  color: "white",
+};
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-12 success" style={navBar}>
+            Laboratorio Firebase Store v9.0.2
+          </div>
+        </div>
+        <h5 className="text-muted">Created by Alexander Grand</h5>
+        <Store />
+      </div>
+    </>
   );
 }
 

@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Laboratorio Firebase Store Hook, con React y Bootstrap 5
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://alexandergrand.github.io/firebase-hook-react/
 
-## Available Scripts
+## Laboratorio Firebase store utiliza la version 9.0.2 del api de firebase web. Y esta construido para realizar pruebas rapidas en un ambiente de desarrollo, pero antes se requiere instalar previamente firebase tools , el cual, contiene los emuladores para trabajar localmente.
 
-In the project directory, you can run:
+```JAVASCRIPT
+npm install -g firebase-tools
+```
 
-### `yarn start`
+## Ademas, es necesario tener un proyecto creado en firebase store y obtener las propias credenciales del proyecto, y luego sustituirlas dentro la siguiente ruta:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+src/util/firebase.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```JAVASCRIPT
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+};
 
-### `yarn test`
+// Initialize Firebase
+export default firebaseConfig;
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## De tal manera, que cuando se ejecute el npm run build, pase de un entorno de desarrollo hacia un entorno de producción, es decir, ahora toda accion se realizara directamente sobre firebase cloud y no localmente. <br>
 
-### `yarn build`
+Sino se instala firebase tool ni el archivo config de firebase store cloud, la aplicacion no no realizara ningun interaccion, es decir, no mostrara ningun mensaje al pulsar los botones.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## El hook internamente contienen las operaciones sobre documentos tales como:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Creacion de documentos con nombre con metodo setDoc
+- Creacion de documentos con nombres auto generados con metodo addDoc
+- Actualizacion de valores con metodo merge
+- Actualizacion de valores con metodo updateDoc
+- Eliminacion de valores especificos de un documento
+- Eliminacion de documentos con el metodo deleteDoc
+- Extraer datos de un documento especifico
+- Extraer datos de todos los documentos.
+- Extraer datos de todos los documentos con sentencias simples mediante el metodo where.

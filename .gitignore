@@ -11,12 +11,26 @@
 # production
 /build
 
+#firebase
+/functions
+firebase.json
+firestore.rules
+firestore.indexes.json
+firestore-debug.log
+.firebaserc
+storage.rules
+ui-debug.log
+
+/Ofuscator
+/ofuscator
+
 # misc
 .DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 
 npm-debug.log*
 yarn-debug.log*
