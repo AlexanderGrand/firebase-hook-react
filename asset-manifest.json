@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/firebase-hook-react/static/css/main.1359096b.chunk.css",
-    "main.js": "/firebase-hook-react/static/js/main.7c7b43f2.chunk.js",
+    "main.js": "/firebase-hook-react/static/js/main.a8655acf.chunk.js",
     "runtime-main.js": "/firebase-hook-react/static/js/runtime-main.7f083021.js",
     "static/css/2.cb809767.chunk.css": "/firebase-hook-react/static/css/2.cb809767.chunk.css",
     "static/js/2.83d7e77d.chunk.js": "/firebase-hook-react/static/js/2.83d7e77d.chunk.js",
@@ -14,6 +14,6 @@
     "static/css/2.cb809767.chunk.css",
     "static/js/2.83d7e77d.chunk.js",
     "static/css/main.1359096b.chunk.css",
-    "static/js/main.7c7b43f2.chunk.js"
+    "static/js/main.a8655acf.chunk.js"
   ]
 }
